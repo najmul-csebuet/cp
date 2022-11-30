@@ -1,0 +1,18 @@
+/***************************************/
+//         Map Related
+/***************************************/
+mcb: map<char, bool> $1;
+mib: map<int, bool> $1;
+msb: map<string, bool> $1;
+
+mci: map<char, int> $1;
+mic: map<int, char> $1;
+mii: map<int, int> $1;
+mis: map<int, string> $1;
+msi: map<string, int> $1;
+mss: map<string, string> $1;
+
+mtt: map of type1 and type2
+map<$1, $2> $3;
+$0
+.

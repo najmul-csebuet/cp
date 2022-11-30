@@ -1,0 +1,23 @@
+/***************************************/
+//         Set Related
+/***************************************/
+
+sb: set<bool> $1;
+sc: set<char> $1;
+si: set<int> $1;
+
+sll: set<long long> $1;
+
+sd: set<double> $1;
+sld: set<long double> $1;
+
+ss: set<string> $1;
+
+sii: set<pair<int, int>> $1;
+svi: set<vector<int>> $1;
+ssi: set<set<int>> $1;
+
+st: set of type
+set<$1> $2;
+$0
+.

@@ -1,0 +1,23 @@
+/***************************************/
+//         Vector Related
+/***************************************/
+
+vb: vector<bool> $1;
+vc: vector<char> $1;
+vi: vector<int> $1;
+
+vll: vector<long long> $1;
+
+vd: vector<double> $1;
+vld: vector<long double> $1;
+
+vs: vector<string> $1;
+
+vii: vector<pair<int, int>> $1;
+vvi: vector<vector<int>> $1;
+
+
+vt: vector of type
+vector<$1> $2;
+$0
+.

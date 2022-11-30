@@ -1,0 +1,327 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	/*************************************/
+	//          Vector related
+	/*************************************/
+	"vector of bool": {
+		"prefix": "vb",
+		"body": [
+			"vector<bool> $1;",
+			"$0"
+		],
+	},
+	"vector of char": {
+		"prefix": "vc",
+		"body": [
+			"vector<char> $1;",
+			"$0"
+		],
+	},
+	"vector of int": {
+		"prefix": "vi",
+		"body": [
+			"vector<int> $1;",
+			"$0"
+		],
+	},
+	"vector of double": {
+		"prefix": "vd",
+		"body": [
+			"vector<double> $1;",
+			"$0"
+		],
+	},
+	"vector of long long": {
+		"prefix": "vll",
+		"body": [
+			"vector<long long> $1;",
+			"$0"
+		],
+	},
+	"vector of string": {
+		"prefix": "vs",
+		"body": [
+			"vector<string> $1;",
+			"$0"
+		],
+	},
+	"vector of pair of ints": {
+		"prefix": "vii",
+		"body": [
+			"vector<pair<int, int>> $1;",
+			"$0"
+		],
+	},
+	"vector of vector of ints": {
+		"prefix": "vvi",
+		"body": [
+			"vector<vector<int>> $1;",
+			"$0"
+		],
+	},
+	"vector of pair of type1, type2": {
+		"prefix": "vtt",
+		"body": [
+			"vector<pair<$1, $2>> $3;",
+			"$0"
+		],
+	},
+	"vector of vector of type": {
+		"prefix": "vvt",
+		"body": [
+			"vector<vector<$1>> $2;",
+			"$0"
+		],
+	},
+	/*************************************/
+	//          Set related
+	/*************************************/
+	"set of bool": {
+		"prefix": "sb",
+		"body": [
+			"set<bool> $1;",
+			"$0"
+		],
+	},
+	"set of char": {
+		"prefix": "sc",
+		"body": [
+			"set<char> $1;",
+			"$0"
+		],
+	},
+	"set of int": {
+		"prefix": "si",
+		"body": [
+			"set<int> $1;",
+			"$0"
+		],
+	},
+	"set of double": {
+		"prefix": "sd",
+		"body": [
+			"set<double> $1;",
+			"$0"
+		],
+	},
+	"set of long long": {
+		"prefix": "sll",
+		"body": [
+			"set<long long> $1;",
+			"$0"
+		],
+	},
+	"set of string": {
+		"prefix": "ss",
+		"body": [
+			"set<string> $1;",
+			"$0"
+		],
+	},
+	"set of pair of ints": {
+		"prefix": "sii",
+		"body": [
+			"set<pair<int, int>> $1;",
+			"$0"
+		],
+	},
+	"set of vector of ints": {
+		"prefix": "svi",
+		"body": [
+			"set<vector<int>> $1;",
+			"$0"
+		],
+	},
+	"set of pair of type1, type2": {
+		"prefix": "stt",
+		"body": [
+			"set<pair<$1, $2>> $3;",
+			"$0"
+		],
+	},
+	"set of vector of type": {
+		"prefix": "svt",
+		"body": [
+			"set<vector<$1>> $2;",
+			"$0"
+		],
+	},
+	/*************************************/
+	//    variable declaration related
+	/*************************************/
+	"long long": {
+		"prefix": "ll",
+		"body": [
+			"long long $0"
+		],
+		"description": "long long"
+	},
+	"long long variable": {
+		"prefix": "llv",
+		"body": [
+			"long long $1;",
+			"$0"
+		],
+		"description": "long long variable"
+	},
+	"declare string variable": {
+		"prefix": "sv",
+		"body": [
+			"string $1;",
+			"$0"
+		],
+		"description": "declare string variable"
+	},
+	"declare string variable inside function parameter": {
+		"prefix": "svc",
+		"body": [
+			"string $1, $0"
+		],
+		"description": "declare string variable inside function parameter"
+	},
+	/*************************************/
+	//          Input related
+	/*************************************/
+	"input single word": {
+		"prefix": "nw",
+		"body": [
+			"var $1 = io.next();",
+			"$0"
+		],
+		"description": ""
+	},
+	"input full line": {
+		"prefix": "nl",
+		"body": [
+			"var $1 = io.nextLine();",
+			"$0"
+		],
+		"description": ""
+	},
+	"input int": {
+		"prefix": "ni",
+		"body": [
+			"var $1 = io.nextInt();",
+			"$0"
+		],
+		"description": ""
+	},
+	"input int array": {
+		"prefix": "na",
+		"body": [
+			"var $1 = io.nextInts();",
+			"$0"
+		],
+		"description": ""
+	},
+	/*************************************/
+	//          Output related
+	/*************************************/
+	"print string / int array using IO class": {
+		"prefix": "iop",
+		"body": [
+			"io.print($1);",
+			"$0"
+		],
+		"description": ""
+	},
+	"print variable": {
+		"prefix": "pv",
+		"body": [
+			"cout << $1 << endl;",
+			"$0"
+		],
+		"description": ""
+	},
+	"print line": {
+		"prefix": "pl",
+		"body": [
+			"cout << \"$1\" << endl;",
+			"$0"
+		],
+		"description": ""
+	},
+	"print yes": {
+		"prefix": "yes",
+		"body": [
+			"cout << \"YES\" << endl;",
+			"$0"
+		],
+		"description": ""
+	},
+	"print no": {
+		"prefix": "no",
+		"body": [
+			"cout << \"NO\" << endl;",
+			"$0"
+		],
+		"description": ""
+	},
+	/*************************************/
+	//          function/method related
+	/*************************************/
+	"create void function": {
+		"prefix": "vf",
+		"body": [
+			"void $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+	"create function with return": {
+		"prefix": "rf",
+		"body": [
+			"$1 $2($3)",
+			"{",
+			"\t$1 $4;",
+			"\t$0",
+			"\treturn $4;",
+			"}"
+		],
+		"description": ""
+	},
+	"create new cpp file": {
+		"prefix": "nf",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"int main(int argc, char const *argv[])",
+			"{",
+			"\t$0",
+			"\treturn 0;",
+			"}"
+		],
+		"description": ""
+	},
+	/*************************************/
+	//          IO Class
+	/*************************************/
+	"Insert IO class": {
+		"prefix": "io",
+		"body": [
+			"class IO {",
+			"  int nextInt() {",
+			"    int a;",
+			"    cin >> a;",
+			"    return a;",
+			"  }",
+			"};",
+		],
+		"description": ""
+	},
+}

@@ -1,0 +1,9 @@
+4
+test
+west
+codeforces
+yes
+test
+yes
+b
+ab

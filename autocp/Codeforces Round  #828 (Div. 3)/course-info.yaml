@@ -1,0 +1,18 @@
+type: codeforces
+title: 'Codeforces Round #828 (Div. 3)'
+language: English
+summary: |-
+  A. Number Replacement
+  B. Even-Odd Increments
+  C. Traffic Light
+  D. Divisibility by 2^n
+  E1. Divisible Numbers (easy version)
+  E2. Divisible Numbers (hard version)
+  F. MEX vs MED
+programming_language: Java
+programming_language_version: 11
+content:
+- Problems
+end_date_time: 1665939000.000000000
+program_type_id: 60
+mode: Study

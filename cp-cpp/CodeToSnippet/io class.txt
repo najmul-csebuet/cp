@@ -1,0 +1,78 @@
+/***************************************/
+//         IO Utility Class
+/***************************************/
+
+nw: string $1 = io.next();
+nl: string $1 = io.nextLine();
+ni: int $1 = io.nextInt();
+na: vector<int> $1 = io.nextInts();
+
+iop: io.print($1);
+
+pv: cout << $1 << endl;
+pl: cout << \"$1\" << endl;
+yes: cout << \"YES\" << endl;
+no: cout << \"NO\" << endl;
+
+io: io class
+----------------
+class IO
+{
+public:
+    IO()
+    {
+        // activate fast io
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+    }
+
+    string next()
+    {
+        string str;
+        cin >> str;
+        return str;
+    }
+
+    string nextLine()
+    {
+        string str;
+        getline(cin, str);
+        return str;
+    }
+
+    int nextInt()
+    {
+        int n;
+        cin >> n;
+        return n;
+    }
+
+    vector<int> nextInts()
+    {
+        return nextInts(nextInt());
+    }
+
+    vector<int> nextInts(int n)
+    {
+        vector<int> a(n);
+        for(int i = 0; i < n; ++i) cin >> a[i];
+        return a;
+    }
+
+    void print(string message)
+    {
+        cout << message << endl;
+    }
+
+    void print(vector<int> n, string separator = \" \")
+    {
+        if (n.size() == 0) {
+            return;
+        }
+        for(int i = 0; i < n.size() - 1; ++i) cout << n[i] << separator;
+        cout << n[n.size() - 1] << endl;
+    }
+} io;
+$0
+.

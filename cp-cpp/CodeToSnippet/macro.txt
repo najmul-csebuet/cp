@@ -56,14 +56,14 @@ dbli: print code with line number
 $0
 .
 
-tri: traverse forward
+tri: traverse forward macro
 ---------------------------------
 #define tr(container, it) \\
   for (auto it = container.begin(); it != container.end(); it++)
 $0
 .
 
-trri: traverse backward
+trri: traverse backward macro
 ---------------------------------
 #define trr(container, it) \\
   for (auto it = container.rbegin(); it != container.rend(); it++)
@@ -72,14 +72,14 @@ $0
 
 tr: traverse forward
 --------------------
-tr($1, ${2, it}) {
+tr($1, ${2:it}) {
   $0
 }
 .
 
-tr: traverse backward
+trr: traverse backward
 --------------------
-trr($1, ${2, it}) {
+trr($1, ${2:it}) {
   $0
 }
 .

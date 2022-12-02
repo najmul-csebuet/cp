@@ -60,6 +60,17 @@ inline int nextInt() {
 $0
 .
 
+nti: Create a function which will input int/char/double/string etc and return it
+--------------------------------------------------------------------------------
+template <typename T>
+inline T next() {
+  T n;
+  cin >> n;
+  return n;
+}
+$0
+.
+
 nai: Create a function which will input int array as vector and return it
 -------------------------------------------------------------------------
 inline vector<${1:int}> nextInts(int n = 0) {

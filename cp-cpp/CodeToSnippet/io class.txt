@@ -5,6 +5,7 @@
 nw: string $1 = next();
 nl: string $1 = nextLine();
 ni: int $1 = nextInt();
+nt: ${1:int} $2 = next<${1:int}>();
 na: auto $1 = nextArray();
 
 pa: printArray($1);

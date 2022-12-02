@@ -154,6 +154,19 @@
 		],
 	},
 
+	"Create a function which will input int/char/double/string etc and return it": {
+		"prefix": "nti",
+		"body": [
+			"template <typename T>",
+			"inline T next() {",
+			"  T n;",
+			"  cin >> n;",
+			"  return n;",
+			"}",
+			"$0",
+		],
+	},
+
 	"Create a function which will input int array as vector and return it": {
 		"prefix": "nai",
 		"body": [
@@ -204,6 +217,14 @@
 		"prefix": "ni",
 		"body": [
 			"int $1 = nextInt();",
+			"$0",
+		],
+	},
+
+	"${1:int} $2 = next<${1:int}>();": {
+		"prefix": "nt",
+		"body": [
+			"${1:int} $2 = next<${1:int}>();",
 			"$0",
 		],
 	},
@@ -365,7 +386,7 @@
 		],
 	},
 
-	"traverse forward": {
+	"traverse forward macro": {
 		"prefix": "tri",
 		"body": [
 			"#define tr(container, it) \\",
@@ -374,7 +395,7 @@
 		],
 	},
 
-	"traverse backward": {
+	"traverse backward macro": {
 		"prefix": "trri",
 		"body": [
 			"#define trr(container, it) \\",
@@ -386,16 +407,16 @@
 	"traverse forward": {
 		"prefix": "tr",
 		"body": [
-			"tr($1, ${2, it}) {",
+			"tr($1, ${2:it}) {",
 			"  $0",
 			"}",
 		],
 	},
 
 	"traverse backward": {
-		"prefix": "tr",
+		"prefix": "trr",
 		"body": [
-			"trr($1, ${2, it}) {",
+			"trr($1, ${2:it}) {",
 			"  $0",
 			"}",
 		],

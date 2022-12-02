@@ -2,13 +2,19 @@
 using namespace std;
 
 #define rep(i, a, b) for (auto i = (a); i < (b); ++i)
-#define tr(container, it) \
-  for (auto it = container.begin(); it != container.end(); it++)
-#define trr(container, it) \
-  for (auto it = container.rbegin(); it != container.rend(); it++)
+
+template <typename T>
+inline T next() {
+  T n;
+  cin >> n;
+  return n;
+}
 
 void solve() {
-  tr
+  string aaa = next<string>();
+  cin >> aaa;
+  int asa = next<int>();
+  long long dasd = next<long long>();
 }
 
 int main() {

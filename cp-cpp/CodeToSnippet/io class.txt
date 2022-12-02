@@ -2,12 +2,12 @@
 //         IO Utility Class
 /***************************************/
 
-nw: string $1 = io.next();
-nl: string $1 = io.nextLine();
-ni: int $1 = io.nextInt();
-na: vector<int> $1 = io.nextInts();
+nw: string $1 = next();
+nl: string $1 = nextLine();
+ni: int $1 = nextInt();
+na: auto $1 = nextArray();
 
-iop: io.print($1);
+pa: printArray($1);
 
 pv: cout << $1 << endl;
 pl: cout << \"$1\" << endl;

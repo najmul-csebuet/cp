@@ -29,3 +29,54 @@ void read(Arg &arg, Rest &...rest) {
 }
 $0
 .
+
+nwi: Create a function which will input word and return it
+----------------------------------------------------------
+inline string next() {
+  string str;
+  cin >> str;
+  return str;
+}
+$0
+.
+
+nli: Create a function which will input line and return it
+----------------------------------------------------------
+inline string next() {
+  string str;
+  getline(cin, str);
+  return str;
+}
+$0
+.
+
+nii: Create a function which will input int and return it
+----------------------------------------------------------
+inline int nextInt() {
+  int n;
+  cin >> n;
+  return n;
+}
+$0
+.
+
+nai: Create a function which will input int array as vector and return it
+-------------------------------------------------------------------------
+inline vector<${1:int}> nextInts(int n = 0) {
+  if (n == 0) cin >> n;
+  vector<${1:int}> a(n);
+  rep(i, 0, n) cin >> a[i];
+  return a;
+}
+$0
+.
+
+pai: Create a function which will print vector
+----------------------------------------------
+inline void printArray(vector<${1:int}> n, string separator = \" \") {
+  if (n.size() == 0) return;
+  rep(i, 0, n.size() - 1) cout << n[i] << separator;
+  cout << n[n.size() - 1] << endl;
+}
+$0
+.

@@ -118,47 +118,108 @@
 		],
 	},
 
+	"Create a function which will input word and return it": {
+		"prefix": "nwi",
+		"body": [
+			"inline string next() {",
+			"  string str;",
+			"  cin >> str;",
+			"  return str;",
+			"}",
+			"$0",
+		],
+	},
+
+	"Create a function which will input line and return it": {
+		"prefix": "nli",
+		"body": [
+			"inline string next() {",
+			"  string str;",
+			"  getline(cin, str);",
+			"  return str;",
+			"}",
+			"$0",
+		],
+	},
+
+	"Create a function which will input int and return it": {
+		"prefix": "nii",
+		"body": [
+			"inline int nextInt() {",
+			"  int n;",
+			"  cin >> n;",
+			"  return n;",
+			"}",
+			"$0",
+		],
+	},
+
+	"Create a function which will input int array as vector and return it": {
+		"prefix": "nai",
+		"body": [
+			"inline vector<${1:int}> nextInts(int n = 0) {",
+			"  if (n == 0) cin >> n;",
+			"  vector<${1:int}> a(n);",
+			"  rep(i, 0, n) cin >> a[i];",
+			"  return a;",
+			"}",
+			"$0",
+		],
+	},
+
+	"Create a function which will print vector": {
+		"prefix": "pai",
+		"body": [
+			"inline void printArray(vector<${1:int}> n, string separator = \" \") {",
+			"  if (n.size() == 0) return;",
+			"  rep(i, 0, n.size() - 1) cout << n[i] << separator;",
+			"  cout << n[n.size() - 1] << endl;",
+			"}",
+			"$0",
+		],
+	},
+
 
 	/***************************************/
 	//         IO Utility Class
 	/***************************************/
 
-	"string $1 = io.next();": {
+	"string $1 = next();": {
 		"prefix": "nw",
 		"body": [
-			"string $1 = io.next();",
+			"string $1 = next();",
 			"$0",
 		],
 	},
 
-	"string $1 = io.nextLine();": {
+	"string $1 = nextLine();": {
 		"prefix": "nl",
 		"body": [
-			"string $1 = io.nextLine();",
+			"string $1 = nextLine();",
 			"$0",
 		],
 	},
 
-	"int $1 = io.nextInt();": {
+	"int $1 = nextInt();": {
 		"prefix": "ni",
 		"body": [
-			"int $1 = io.nextInt();",
+			"int $1 = nextInt();",
 			"$0",
 		],
 	},
 
-	"vector<int> $1 = io.nextInts();": {
+	"auto $1 = nextArray();": {
 		"prefix": "na",
 		"body": [
-			"vector<int> $1 = io.nextInts();",
+			"auto $1 = nextArray();",
 			"$0",
 		],
 	},
 
-	"io.print($1);": {
-		"prefix": "iop",
+	"printArray($1);": {
+		"prefix": "pa",
 		"body": [
-			"io.print($1);",
+			"printArray($1);",
 			"$0",
 		],
 	},
@@ -413,9 +474,19 @@
 			"",
 			"#define rep(i, a, b) for (auto i = (a); i < (b); ++i)",
 			"",
-			"int main(int argc, char const *argv[])",
-			"{",
-			"  $0  ",
+			"void solve() {",
+			"  $0",
+			"}",
+			"",
+			"int main() {",
+			"  ios_base::sync_with_stdio(false);",
+			"  cin.tie(0);",
+			"  int testCount = 1;",
+			"  // testCount = io.nextInt();",
+			"  while (testCount > 0) {",
+			"    solve();",
+			"    --testCount;",
+			"  }",
 			"  return 0;",
 			"}",
 		],

@@ -2,9 +2,9 @@
 //          Useful macro related
 /*************************************/
 
-dd: Useful debugging function to print some variables
+dbi: Useful debugging function to print some variables
 -----------------------------------------------------
-#define debug(args...)                       \\
+#define db(args...)                       \\
   {                                          \\
     string _s = #args;                       \\
     replace(_s.begin(), _s.end(), ',', ' '); \\
@@ -23,7 +23,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 $0
 .
 
-um_hash: Use this for unordered map if needed
+umi: Use this for unordered map if needed
 -------------------------------------------------
 // https://codeforces.com/blog/entry/62393
 struct custom_hash {
@@ -50,17 +50,36 @@ struct custom_hash {
 $0
 .
 
-db: print code with line number
+dbli: print code with line number
 -------------------------------
-#define DB(x) cerr << __LINE__ << \": \" << #x << \" = \" << (x) << endl
+#define dbl(x) cerr << __LINE__ << \": \" << #x << \" = \" << (x) << endl
 $0
 .
 
-tr: traverse forward and backward
+tri: traverse forward
 ---------------------------------
 #define tr(container, it) \\
   for (auto it = container.begin(); it != container.end(); it++)
+$0
+.
+
+trri: traverse backward
+---------------------------------
 #define trr(container, it) \\
   for (auto it = container.rbegin(); it != container.rend(); it++)
 $0
+.
+
+tr: traverse forward
+--------------------
+tr($1, ${2, it}) {
+  $0
+}
+.
+
+tr: traverse backward
+--------------------
+trr($1, ${2, it}) {
+  $0
+}
 .

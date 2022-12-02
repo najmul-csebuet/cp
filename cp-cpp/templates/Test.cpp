@@ -2,8 +2,14 @@
 using namespace std;
 
 #define rep(i, a, b) for (auto i = (a); i < (b); ++i)
+#define tr(container, it) \
+  for (auto it = container.begin(); it != container.end(); it++)
+#define trr(container, it) \
+  for (auto it = container.rbegin(); it != container.rend(); it++)
 
-void solve() {}
+void solve() {
+  tr
+}
 
 int main() {
   ios_base::sync_with_stdio(false);

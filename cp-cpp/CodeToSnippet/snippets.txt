@@ -306,9 +306,9 @@
 	/*************************************/
 
 	"Useful debugging function to print some variables": {
-		"prefix": "dd",
+		"prefix": "dbi",
 		"body": [
-			"#define debug(args...)                       \\",
+			"#define db(args...)                       \\",
 			"  {                                          \\",
 			"    string _s = #args;                       \\",
 			"    replace(_s.begin(), _s.end(), ',', ' '); \\",
@@ -329,7 +329,7 @@
 	},
 
 	"Use this for unordered map if needed": {
-		"prefix": "um_hash",
+		"prefix": "umi",
 		"body": [
 			"// https://codeforces.com/blog/entry/62393",
 			"struct custom_hash {",
@@ -358,21 +358,46 @@
 	},
 
 	"print code with line number": {
-		"prefix": "db",
+		"prefix": "dbli",
 		"body": [
-			"#define DB(x) cerr << __LINE__ << \": \" << #x << \" = \" << (x) << endl",
+			"#define dbl(x) cerr << __LINE__ << \": \" << #x << \" = \" << (x) << endl",
 			"$0",
 		],
 	},
 
-	"traverse forward and backward": {
-		"prefix": "tr",
+	"traverse forward": {
+		"prefix": "tri",
 		"body": [
 			"#define tr(container, it) \\",
 			"  for (auto it = container.begin(); it != container.end(); it++)",
+			"$0",
+		],
+	},
+
+	"traverse backward": {
+		"prefix": "trri",
+		"body": [
 			"#define trr(container, it) \\",
 			"  for (auto it = container.rbegin(); it != container.rend(); it++)",
 			"$0",
+		],
+	},
+
+	"traverse forward": {
+		"prefix": "tr",
+		"body": [
+			"tr($1, ${2, it}) {",
+			"  $0",
+			"}",
+		],
+	},
+
+	"traverse backward": {
+		"prefix": "tr",
+		"body": [
+			"trr($1, ${2, it}) {",
+			"  $0",
+			"}",
 		],
 	},
 

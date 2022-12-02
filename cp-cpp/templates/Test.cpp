@@ -1,21 +1,8 @@
-/***************************************/
-//         IO Utility Class
-/***************************************/
+#include <bits/stdc++.h>
+using namespace std;
 
-nw: string $1 = io.next();
-nl: string $1 = io.nextLine();
-ni: int $1 = io.nextInt();
-na: vector<int> $1 = io.nextInts();
+#define rep(i, a, b) for (auto i = (a); i < (b); ++i)
 
-iop: io.print($1);
-
-pv: cout << $1 << endl;
-pl: cout << \"$1\" << endl;
-yes: cout << \"YES\" << endl;
-no: cout << \"NO\" << endl;
-
-io: io class
-----------------
 struct IO {
   string next() {
     string str;
@@ -47,11 +34,11 @@ struct IO {
     return a;
   }
 
-  void print(vector<int> n, string separator = \" \") {
+  void print(vector<int> n, string separator = " ") {
     if (n.size() == 0) return;
     rep(i, 0, n.size() - 1) cout << n[i] << separator;
     cout << n[n.size() - 1] << endl;
   }
 } io;
-$0
-.
+
+int main(int argc, char const *argv[]) { return 0; }

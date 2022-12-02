@@ -2,7 +2,6 @@
 using namespace std;
 
 #define HIDE_TEMPLATE true
-
 #ifdef HIDE_TEMPLATE
 
 #define vb vector<bool>
@@ -41,7 +40,6 @@ using namespace std;
 #define pf printf
 
 #define mt make_tuple
-typedef tuple<int, int, int> State; // operator< defined
 
 #define mod(n, m) ((n % m + m) % m)
 #define reset(n, m) memset(n, m, sizeof n)
@@ -50,110 +48,122 @@ typedef tuple<int, int, int> State; // operator< defined
 #define rep(i, a, b) for (auto i = (a); i < (b); ++i)
 #define repr(i, a, b) for (auto i = (a); i > (b); --i)
 
-#define tr(container, it) for (auto it = container.begin(); it != container.end(); it++)
-#define trr(container, it) for (auto it = container.rbegin(); it != container.rend(); it++)
+#define tr(container, it) \
+  for (auto it = container.begin(); it != container.end(); it++)
+#define trr(container, it) \
+  for (auto it = container.rbegin(); it != container.rend(); it++)
 
 // https://codeforces.com/blog/entry/62393
-struct custom_hash
-{
-    static uint64_t splitmix64(uint64_t x)
-    {
-        // http://xorshift.di.unimi.it/splitmix64.c
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
+struct custom_hash {
+  static uint64_t splitmix64(uint64_t x) {
+    // http://xorshift.di.unimi.it/splitmix64.c
+    x += 0x9e3779b97f4a7c15;
+    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+    return x ^ (x >> 31);
+  }
 
-    size_t operator()(uint64_t x) const
-    {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(x + FIXED_RANDOM);
-    }
+  size_t operator()(uint64_t x) const {
+    static const uint64_t FIXED_RANDOM =
+        chrono::steady_clock::now().time_since_epoch().count();
+    return splitmix64(x + FIXED_RANDOM);
+  }
 };
 
 #define umii unordered_map<int, int, custom_hash>
 #define ghtii gp_hash_table<int, int, custom_hash>
-#define boost(a)             \
-    a.max_load_factor(0.25); \
-    a.reserve(1 << 20);
+#define boost(a)           \
+  a.max_load_factor(0.25); \
+  a.reserve(1 << 20);
 
 #define eqd(a, b) (abs(a - b) < 1e-9)
 
 #define DB(x) cerr << __LINE__ << ": " << #x << " = " << (x) << endl
 
-class IOUtility
-{
-public:
-    IOUtility()
-    {
-        // activate fast io
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-    }
+#define debug(args...)                       \
+  {                                          \
+    string _s = #args;                       \
+    replace(_s.begin(), _s.end(), ',', ' '); \
+    stringstream _ss(_s);                    \
+    istream_iterator<string> _it(_ss);       \
+    err(_it, args);                          \
+  }
 
-    string readLine()
-    {
-        string str;
-        getline(cin, str);
-        return str;
-    }
+void err(istream_iterator<string> it) {}
 
-    vi readInts()
-    {
-        int n;
-        cin >> n;
-        return readInts(n);
-    }
+template <typename T, typename... Args>
+void err(istream_iterator<string> it, T a, Args... args) {
+  cerr << *it << " = " << a << endl;
+  err(++it, args...);
+}
 
-    vi readInts(int n)
-    {
-        vi a(n);
-        rep(i, 0, n) cin >> a[i];
-        return a;
-    }
+void read() {}
 
-    void print(vi n)
-    {
-        print(n, " ");
-    }
+template <class Arg, class... Rest>
+void read(Arg &arg, Rest &...rest) {
+  cin >> arg;
+  read(rest...);
+}
 
-    void print(vi n, string separator)
-    {
-        if (n.size() == 0)
-            return;
-        rep(i, 0, n.size() - 1) cout << n[i] << separator;
-        cout << n[n.size() - 1] << "\n";
-    }
+class IO {
+ public:
+  IO() {
+    // activate fast io
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+  }
 
-    void reversePrint(vi n)
-    {
-        reversePrint(n, " ");
-    }
+  string next() {
+    string str;
+    cin >> str;
+    return str;
+  }
 
-    void reversePrint(vi n, string separator)
-    {
-        if (n.size() == 0)
-            return;
-        repr(i, n.size() - 1, 0) cout << n[i] << separator;
-        cout << n[0] << "\n";
-    }
+  string nextLine() {
+    string str;
+    getline(cin, str);
+    return str;
+  }
+
+  int nextInt() {
+    int n;
+    cin >> n;
+    return n;
+  }
+
+  vi nextInts() {
+    int n;
+    cin >> n;
+    return nextInts(n);
+  }
+
+  vi nextInts(int n) {
+    vi a(n);
+    rep(i, 0, n) cin >> a[i];
+    return a;
+  }
+
+  void print(string message) { cout << message << endl; }
+
+  void print(vi n, string separator = " ") {
+    if (n.size() == 0) return;
+    rep(i, 0, n.size() - 1) cout << n[i] << separator;
+    cout << n[n.size() - 1] << "\n";
+  }
 } io;
 
 #endif
 
-void solve()
-{
-    // start solving here
+void solve() {
+  // solve here
 }
 
-int main()
-{
-    int t = 1;
-    // cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+int main() {
+  int testCount = 1;
+  // testCount = io.nextInt();
+  while (testCount > 0) {
+    solve();
+    --testCount;
+  }
 }

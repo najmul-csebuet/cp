@@ -3,54 +3,7 @@ using namespace std;
 
 #define rep(i, a, b) for (auto i = (a); i < (b); ++i)
 
-class IO {
- public:
-  IO() {
-    // activate fast io
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-  }
-
-  string next() {
-    string str;
-    cin >> str;
-    return str;
-  }
-
-  string nextLine() {
-    string str;
-    getline(cin, str);
-    return str;
-  }
-
-  int nextInt() {
-    int n;
-    cin >> n;
-    return n;
-  }
-
-  vector<int> nextInts() { return nextInts(nextInt()); }
-
-  vector<int> nextInts(int n) {
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i) cin >> a[i];
-    return a;
-  }
-
-  void print(string message) { cout << message << endl; }
-
-  void print(vector<int> n, string separator = " ") {
-    if (n.size() == 0) {
-      return;
-    }
-    for (int i = 0; i < n.size() - 1; ++i) cout << n[i] << separator;
-    cout << n[n.size() - 1] << endl;
-  }
-} io;
-
 class Dijkstra {
- private:
   int vertexCount, edgeCount;
   int graph[10][10];
 
@@ -115,3 +68,49 @@ int main(int argc, char const *argv[]) {
   cout << path[path.size() - 1] << endl;
   return 0;
 }
+
+class IO {
+ public:
+  IO() {
+    // activate fast io
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+  }
+
+  string next() {
+    string str;
+    cin >> str;
+    return str;
+  }
+
+  string nextLine() {
+    string str;
+    getline(cin, str);
+    return str;
+  }
+
+  int nextInt() {
+    int n;
+    cin >> n;
+    return n;
+  }
+
+  vector<int> nextInts() { return nextInts(nextInt()); }
+
+  vector<int> nextInts(int n) {
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    return a;
+  }
+
+  void print(string message) { cout << message << endl; }
+
+  void print(vector<int> n, string separator = " ") {
+    if (n.size() == 0) {
+      return;
+    }
+    for (int i = 0; i < n.size() - 1; ++i) cout << n[i] << separator;
+    cout << n[n.size() - 1] << endl;
+  }
+} io;

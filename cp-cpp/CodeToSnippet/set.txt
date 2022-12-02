@@ -18,6 +18,7 @@ svi: set<vector<int>> $1;
 ssi: set<set<int>> $1;
 
 st: set of type
+---------------
 set<$1> $2;
 $0
 .

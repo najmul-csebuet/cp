@@ -1,0 +1,11 @@
+/*************************************/
+//          Oneline codes related
+/*************************************/
+
+inf: LLONG_MAX $0
+pb: push_back($1);
+eb: emplace_back($1);
+em: emplace($1);
+ll: long long $1;
+pf: printf(\"$1\", $2);
+mt: make_tuple($1);

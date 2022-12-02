@@ -18,6 +18,7 @@ vvi: vector<vector<int>> $1;
 
 
 vt: vector of type
+------------------
 vector<$1> $2;
 $0
 .

@@ -62,9 +62,12 @@ void handleSingleLine(string prefixAndBody) {
   fout << "\t\t\"body\": [\n";
 
   fout << "\t\t\t\"" << body << "\",\n";
-  fout << "\t\t\t\""
-       << "$0"
-       << "\",\n";
+
+  if (body.find("$0") == string::npos) {
+    fout << "\t\t\t\""
+         << "$0"
+         << "\",\n";
+  }
 
   fout << "\t\t],\n\t},\n\n";
 }
@@ -127,8 +130,10 @@ void generate(string inputFileName) {
   while (fin.good()) {
     // iterate until we get a : line
     firstLine = getFirstNonEmptyLine();
-
-    if (firstLine.find(";") != string::npos) {
+    if (firstLine.find("$0") != string::npos) {
+      // this is 1 line snippet
+      handleSingleLine(firstLine);
+    } else if (firstLine.find(";") != string::npos) {
       // this is 1 line snippet
       handleSingleLine(firstLine);
     } else {

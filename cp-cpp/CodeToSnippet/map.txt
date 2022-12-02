@@ -13,6 +13,7 @@ msi: map<string, int> $1;
 mss: map<string, string> $1;
 
 mtt: map of type1 and type2
+---------------------------
 map<$1, $2> $3;
 $0
 .

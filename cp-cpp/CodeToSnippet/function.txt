@@ -17,3 +17,15 @@ $1 $2($3) {
     return $4;
 }
 .
+
+read: Read multiple variables at once
+-------------------------------------
+void read() {}
+
+template <class Arg, class... Rest>
+void read(Arg &arg, Rest &...rest) {
+  cin >> arg;
+  read(rest...);
+}
+$0
+.
